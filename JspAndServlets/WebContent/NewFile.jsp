@@ -8,26 +8,23 @@
 <title>Test</title>
 </head>
 <body>
-	<!-- table - list of student -->
-	<table border="1">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Age</th>
-				<th>Place</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${stlist}" var="student">
-				<tr>
-					<td>${student.name}</td>
-					<td>${student.age}</td>
-					<td>${student.location}</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+	<!-- JSTL if -->
+	<c:set var="num" value="100"></c:set>
 	
+	<c:if test="${num>5}">
+	<p>This value is greater than 5</p>
+	</c:if>
+	
+	<!-- JSTL choose-when, otherwise its similar to if else -->
+	<c:choose>
+		<c:when test="${num<6}">
+		<p>This value is less than 10</p>
+		</c:when>
+		
+		<c:otherwise>
+		<p>This value is greater than 10</p>
+		</c:otherwise>
+	</c:choose>
 	
 </body>
 </html>
