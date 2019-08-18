@@ -25,17 +25,22 @@ public class FirstProject extends HttpServlet {
 		st.setAge(12);
 		st.setLocation("yyyyy");
 		list.add(st);
-		 	
+		st=new Student();
+		st.setName("dfdfffdfd");
+		st.setAge(13);
+		st.setLocation("zzzzzzzz");
+		list.add(st); 	
+		
 		req.setAttribute("stlist", list);
 		String firstName=req.getParameter("fname");
 		String lastName=req.getParameter("lname");
 		String fullName=firstName+lastName;
 		
-		String[] colors ={"red", "blue", "green", "yellow", "violet", "orange"};
+//		String[] colors ={"red", "blue", "green", "yellow", "violet", "orange"};
 		
 		req.setAttribute("name", fullName);
 		req.setAttribute("st", st);
-		req.setAttribute("col", colors);
+//		req.setAttribute("col", colors);
 		RequestDispatcher dispatcher=req.getRequestDispatcher("/NewFile.jsp");
 		dispatcher.forward(req ,resp);
 	}

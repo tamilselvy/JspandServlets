@@ -8,40 +8,26 @@
 <title>Test</title>
 </head>
 <body>
-	<!-- EL expression -->
-	<p>The value for 2*2 is ${2*2}</p>
-	<h1>Hello, ${name}</h1>
-	<h4>Name - ${st.name}</h4>
-	<h4>Age - ${st.age}</h4>
-	<h4>Place - ${st.location}</h4>
+	<!-- table - list of student -->
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Age</th>
+				<th>Place</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${stlist}" var="student">
+				<tr>
+					<td>${student.name}</td>
+					<td>${student.age}</td>
+					<td>${student.location}</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 	
-	<!--out - Used to display content in browser -->
-	<p><c:out value="TS"></c:out></p>
-	
-	<!-- set- Used to set value to a variable -->
-	<c:set var="x" value="100"></c:set>
-	<p><c:out value="${x}"></c:out></p>
-	
-	<!-- remove- Used to remove the variable -->
-	<c:remove var="x"/>
-	<p><c:out value="${x}"></c:out></p>
-	
-	<!-- url- used to navigate to diff pages -->
-	<a href="<c:url value="/index.html"></c:url>">Click here
-	</a>
-	
-	<!-- forEach loop -->
-	<c:forEach items="${col}" var="color">
-	<p>Color = ${color}</p>
-	</c:forEach>
-	
-	<!-- forEach loop - list -->
-	<c:forEach items="${stlist}" var="student">
-		<p>Student name = ${student.name}</p>
-		<p>Student age = ${student.age}</p>
-		<p>Student place = ${student.location}</p>
-		<hr>
-	</c:forEach>
 	
 </body>
 </html>
